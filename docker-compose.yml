@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  aasaam-node-lts-plus:
+    container_name: aasaam-node-lts-plus
+    image: ghcr.io/aasaam/node-lts-plus:latest
