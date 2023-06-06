@@ -34,11 +34,20 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - shell: bash
+      - name: Build 18
+        shell: bash
         run: |
-          docker build -t aasaam/node-lts-plus .
-          docker push aasaam/node-lts-plus
-          docker tag aasaam/node-lts-plus ghcr.io/aasaam/node-lts-plus:latest
+          docker build --build-arg IMAGE_VERSION=18 -t aasaam/node-lts-plus:18 .
+          docker push aasaam/node-lts-plus:18
+          docker tag aasaam/node-lts-plus:18 ghcr.io/aasaam/node-lts-plus:18
+          docker push ghcr.io/aasaam/node-lts-plus:18
+
+      - name: Build latest
+        shell: bash
+        run: |
+          docker build --build-arg IMAGE_VERSION=20 -t aasaam/node-lts-plus:latest .
+          docker push aasaam/node-lts-plus:latest
+          docker tag aasaam/node-lts-plus:latest ghcr.io/aasaam/node-lts-plus:latest
           docker push ghcr.io/aasaam/node-lts-plus:latest
 
       - name: Docker Hub Description

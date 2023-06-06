@@ -1,4 +1,5 @@
-FROM node:18-alpine
+ARG IMAGE_VERSION=18
+FROM node:$IMAGE_VERSION-alpine
 
 RUN apk add --no-cache \
   nano \
