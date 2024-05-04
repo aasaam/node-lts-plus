@@ -61,7 +61,7 @@ jobs:
       - name: Build latest
         shell: bash
         run: |
-          docker build --build-arg IMAGE_VERSION=latest -t aasaam/node-lts-plus:latest .
+          docker build --build-arg IMAGE_VERSION=22 -t aasaam/node-lts-plus:latest .
           docker push aasaam/node-lts-plus:latest
           docker tag aasaam/node-lts-plus:latest ghcr.io/aasaam/node-lts-plus:latest
           docker push ghcr.io/aasaam/node-lts-plus:latest
