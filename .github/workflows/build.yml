@@ -42,13 +42,21 @@ jobs:
           docker tag aasaam/node-lts-plus:18 ghcr.io/aasaam/node-lts-plus:18
           docker push ghcr.io/aasaam/node-lts-plus:18
 
-      - name: Build latest
+      - name: Build 20
         shell: bash
         run: |
-          docker build --build-arg IMAGE_VERSION=20 -t aasaam/node-lts-plus:latest .
-          docker push aasaam/node-lts-plus:latest
-          docker tag aasaam/node-lts-plus:latest ghcr.io/aasaam/node-lts-plus:latest
-          docker push ghcr.io/aasaam/node-lts-plus:latest
+          docker build --build-arg IMAGE_VERSION=20 -t aasaam/node-lts-plus:20 .
+          docker push aasaam/node-lts-plus:20
+          docker tag aasaam/node-lts-plus:20 ghcr.io/aasaam/node-lts-plus:20
+          docker push ghcr.io/aasaam/node-lts-plus:20
+
+      - name: Build 22
+        shell: bash
+        run: |
+          docker build --build-arg IMAGE_VERSION=22 -t aasaam/node-lts-plus:22 .
+          docker push aasaam/node-lts-plus:22
+          docker tag aasaam/node-lts-plus:22 ghcr.io/aasaam/node-lts-plus:22
+          docker push ghcr.io/aasaam/node-lts-plus:22
 
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
