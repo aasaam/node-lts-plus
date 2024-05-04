@@ -7,6 +7,7 @@ RUN apk add --no-cache \
   font-noto-arabic \
   font-noto-emoji \
   font-noto \
+  icu-data-full \
   ca-certificates \
   file \
   fribidi \
